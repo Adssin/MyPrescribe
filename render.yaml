@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: skin-disease-classifier
+    env: python
+    plan: free
+    buildCommand: pip install -r THEFINAL/Website/requirements.txt
+    startCommand: gunicorn THEFINAL.Website.app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10 
